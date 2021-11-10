@@ -6,11 +6,7 @@ const Navigation = () => {
         <Navbar bg='light' variant="light" expand="md">
             <Container>
                 <Navbar.Brand>
-                    <Nav.Item>
-                        <Nav.Link>
-                            Home
-                        </Nav.Link>
-                    </Nav.Item>
+                    working
                 </Navbar.Brand>
             </Container>
         </Navbar>
