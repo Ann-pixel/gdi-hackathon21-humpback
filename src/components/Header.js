@@ -13,6 +13,8 @@ const Header = () => {
     const hardLine={
         borderTop: '3px double #8c8b8b',
         width: '75%',
+        margin: '0 auto',
+        textAlign: 'center',
     }
     
     const span={
