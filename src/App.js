@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 function App() {
   const colorList = ["red", "blue", "yellow", "green"];
   const initPlay = {
@@ -95,6 +96,7 @@ function App() {
   return (
     <div>
       <Navigation />
+      <Header />
       <div className="app">
         <div className="card-wrapper">
           {colorList &&
