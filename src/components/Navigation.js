@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 
 const Navigation = () => {
     const navStyle={
-        backgroundColor: '#005b7b',
+        backgroundColor: '#000',
         color: 'white',
         paddingTop: '20px',
         paddingBottom: '20px',
