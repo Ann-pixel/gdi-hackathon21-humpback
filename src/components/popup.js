@@ -1,5 +1,5 @@
 import React from 'react'
-import './popup.css'
+import '../css/popup.css'
 import {FaTimes} from 'react-icons/fa'
 
 function Popup(props) {
