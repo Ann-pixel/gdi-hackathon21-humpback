@@ -19,6 +19,29 @@ const Footer = () => {
         fontSize: '12px',
     }
 
+    const creators = [
+        {
+            name: 'Gauri Mhaiskar',
+            website: 'http://www.gaurimhaiskar.com/',
+            linkedIn: 'https://www.linkedin.com/in/gauri-mhaiskar-08688160/',
+            github: 'https://github.com/Ann-pixel',
+        },
+        {
+            name: 'Tracy Tucker',
+            linkedIn: 'https://www.linkedin.com/in/tracyreuther/',
+            github: 'https://github.com/tracy-tucker',
+        },
+        {
+            name: 'Alison Lee',
+            linkedIn: 'http://www.linkedin.com/in/alison-lee-4547b114',
+            github: 'https://github.com/alison2686',
+        },
+        {
+            name: 'Heidi Hanschu',
+            github: 'https://github.com/hhanschu',
+        }
+    ]
+
     return (
         <Container style={footerStyle} fluid>
             <Container>
