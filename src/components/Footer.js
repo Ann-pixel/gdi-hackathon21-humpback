@@ -9,19 +9,30 @@ const Footer = () => {
         color: 'white',
         paddingTop: '20px',
         paddingBottom: '20px',
-        paddingLeft: '10px',
+        margin: '0 auto',
+        textAlign: 'center',
+        // paddingLeft: '10px',
     };
 
+    const footerNames={
+        paddingTop: '10px',
+        fontSize: '12px',
+    }
+
     return (
-        <Container style={footerStyle}>
-            <Row>
-                <Col xs={12}><img src={logo} alt="" /></Col>
-            </Row>
-            <Row>
-                <Col xs={6}>testing</Col>
-                <Col xs={6}>testing 2</Col>
-            </Row>
-            
+        <Container style={footerStyle} fluid>
+            <Container>
+                <Row>
+                    <Col xs={12}><img src={logo} alt="" /></Col>
+                    <Col xs={12}>Meet the creaters:</Col>
+                </Row>
+                <Row style={footerNames}>
+                    <Col xs={3}>Gauri Mhaiskar</Col>
+                    <Col xs={3}>Alison Lee</Col>
+                    <Col xs={3}>Tracy Tucker</Col>
+                    <Col xs={3}>Heidi Hanschu</Col>
+                </Row>
+            </Container>
         </Container>
     )
 }
