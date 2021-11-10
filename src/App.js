@@ -104,6 +104,7 @@ function App() {
 
   return (
     <div className="app">
+      {/* popup instruction button */}
       <div className="btn-wrapper">
         <button 
           className="popup-btn" 
@@ -136,17 +137,21 @@ function App() {
       {isOn && (play.isDisplay || play.isUserPlay) && (
         <div className="score">{play.score}</div>
       )}
-      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h3 className="popup-title">How to Play</h3>
-        <p className="game-object">Object of the game: <br/> Repeat the ever-increasing color and sound pattern <br/> chosen by the whale.</p>
-        <ol className="game-instructions">
-            <li>Press any key to start</li>
-            <li>The whale will light up the first color button and play a sound. Repeat the pattern by pressing the same color button.</li>
-            <li>The whale will duplicate the first color and add one. Repeat these two colors by pressing the corresponding color buttons.</li>
-            <li>Keep playing for as long as you can repeat the sequence correctly.</li>
-            <li>If you fail to repeat the sequence correctly the whale will moan and the game ends.</li>
+      {/* popup component triggers when How to Play button is clicked */}
+      <Popup 
+        trigger={buttonPopup} 
+        setTrigger={setButtonPopup}
+      >
+          <h3 className="popup-title">How to Play</h3>
+          <p className="game-object">Object of the game: <br/> Repeat the ever-increasing color and sound pattern <br/> chosen by the whale.</p>
+          <ol className="game-instructions">
+              <li>Press any key to start</li>
+              <li>The whale will light up the first color button and play a sound. Repeat the pattern by pressing the same color button.</li>
+              <li>The whale will duplicate the first color and add one. Repeat these two colors by pressing the corresponding color buttons.</li>
+              <li>Keep playing for as long as you can repeat the sequence correctly.</li>
+              <li>If you fail to repeat the sequence correctly the whale will moan and the game ends.</li>
           </ol>
-            </Popup>
+      </Popup>
     </div>
   );
 }
