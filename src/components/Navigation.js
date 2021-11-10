@@ -11,7 +11,7 @@ const Navigation = () => {
         paddingLeft: '10px',
     };
     return (
-        <Navbar bg="light" variant="light" expand="md" style={navStyle}>
+        <Navbar expand="md" style={navStyle}>
             <Container>
                 <Navbar.Brand>
                     <img src={logo} alt="" />
