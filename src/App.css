@@ -69,3 +69,36 @@
   align-items: center;
   flex-direction: column;
 }
+
+.popup-title{
+  text-align: center;
+  padding: 5px;
+}
+
+.game-object {
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.popup-btn{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 50px;
+  background: #010606;
+  white-space: nowrap;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-instructions{
+  line-height: 1.6;
+}
