@@ -5,6 +5,7 @@ import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const colorList = ["red", "blue", "yellow", "green"];
   const initPlay = {

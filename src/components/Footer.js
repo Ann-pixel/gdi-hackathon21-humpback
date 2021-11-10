@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../images/whale-32.png'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Grid, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
 
@@ -15,7 +15,11 @@ const Footer = () => {
     return (
         <Container style={footerStyle}>
             <Row>
-                <img src={logo} alt="" />
+                <Col xs={12}><img src={logo} alt="" /></Col>
+            </Row>
+            <Row>
+                <Col xs={6}>testing</Col>
+                <Col xs={6}>testing 2</Col>
             </Row>
             
         </Container>
