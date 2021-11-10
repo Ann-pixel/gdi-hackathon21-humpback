@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 const Footer = () => {
 
     const footerStyle={
-        backgroundColor: '#000',
+        backgroundColor: '#005F73',
         color: 'white',
         paddingTop: '20px',
         paddingBottom: '20px',
