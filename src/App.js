@@ -3,6 +3,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
+import Footer from "./components/Footer";
 function App() {
   const colorList = ["red", "blue", "yellow", "green"];
   const initPlay = {
@@ -118,6 +119,7 @@ function App() {
           <div className="score">{play.score}</div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
