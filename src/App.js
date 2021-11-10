@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
-// import popup component
+// import Popup component
 import Popup from "./components/popup";
 // import arrow icons
 import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md'
@@ -104,7 +104,7 @@ function App() {
 
   return (
     <div className="app">
-      {/* popup instruction button */}
+      {/* How to Play button */}
       <div className="btn-wrapper">
         <button 
           className="popup-btn" 
@@ -137,7 +137,7 @@ function App() {
       {isOn && (play.isDisplay || play.isUserPlay) && (
         <div className="score">{play.score}</div>
       )}
-      {/* popup component triggers when How to Play button is clicked */}
+      {/* Popup component triggers when How to Play button is clicked */}
       <Popup 
         trigger={buttonPopup} 
         setTrigger={setButtonPopup}
