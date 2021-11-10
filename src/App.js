@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Navigation from "./components/Navigation";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
 function App() {
@@ -91,29 +92,32 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className="card-wrapper">
-        {colorList &&
-          colorList.map((v, i) => (
-            <Cards
-              key={v}
-              onClick={() => {
-                cardClickHandle(v);
-              }}
-              flash={flashColor === v}
-              color={v}
-            />
-          ))}
-      </div>
+    <div>
+      <Navigation />
+      <div className="app">
+        <div className="card-wrapper">
+          {colorList &&
+            colorList.map((v, i) => (
+              <Cards
+                key={v}
+                onClick={() => {
+                  cardClickHandle(v);
+                }}
+                flash={flashColor === v}
+                color={v}
+              />
+            ))}
+        </div>
 
-      {!isOn && !play.score && (
-        <button className="start-button" onClick={startHandle}>
-          Start
-        </button>
-      )}
-      {isOn && (play.isDisplay || play.isUserPlay) && (
-        <div className="score">{play.score}</div>
-      )}
+        {!isOn && !play.score && (
+          <button className="start-button" onClick={startHandle}>
+            Start
+          </button>
+        )}
+        {isOn && (play.isDisplay || play.isUserPlay) && (
+          <div className="score">{play.score}</div>
+        )}
+      </div>
     </div>
   );
 }
