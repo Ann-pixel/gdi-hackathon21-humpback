@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../images/whale-32.png'
-import { Container, Grid, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
 

@@ -5,6 +5,7 @@ import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HighScores from "./components/HighScores";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const colorList = ["red", "blue", "yellow", "green"];
@@ -122,6 +123,7 @@ function App() {
           <div className="score">{play.score}</div>
         )}
       </div>
+      <HighScores />
       <Footer />
     </div>
   );
