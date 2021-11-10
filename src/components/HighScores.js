@@ -4,11 +4,13 @@ import { Container, Row, Col } from 'react-bootstrap'
 const HighScores = () => {
 
     const scoreBox={
-        margin: '30px',
+        margin: '0 auto',
+        padding: '10px',
+        border: '1px dashed #0A9396',
     }
 
     const scoreHeader={
-        backgroundColor: 'green',
+        backgroundColor: '#B0B356',
         color: 'white',
         paddingTop: '20px',
         paddingBottom: '20px',
@@ -18,9 +20,10 @@ const HighScores = () => {
     };
 
     const scoreList={
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        margin: '0 auto',
+        textAlign: 'center',
+        padding: '10px',
+        fontSize: '1.5rem',
     }
 
     const highScores = [
@@ -45,13 +48,15 @@ const HighScores = () => {
             score: 60
         }
     ]
+
+    const scores = highScores.sort((a,b) => parseFloat(b.score) - parseFloat(a.score))
     
     return (
         <Container style={scoreBox}>
             <Row style={scoreHeader}>
                 <Col><h2>HIGH SCORES</h2></Col>
             </Row>
-            {highScores.map(score => (
+            {scores.map(score => (
             <Row style={scoreList} key={score.id}>
                 <Col xs={6}>{score.name}</Col>
                 <Col xs={6}>{score.score}</Col>
