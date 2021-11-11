@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Cards from "./components/colorCard";
-import timeout from "./utils/utils";
+import Cards from "./components/Cards";
+import { timeout } from "./utils/utils";
+import { allSounds } from "./utils/utils";
+import GameOver from "./components/GameOver";
 function App() {
-  const colorList = ["red", "blue", "yellow", "green"];
+  const colorList = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
   const initPlay = {
     isDisplay: false,
     displayPattern: [],
@@ -12,48 +14,58 @@ function App() {
     userPattern: [],
   };
   const [isOn, setIsOn] = useState(false);
-  const [play, setPlay] = useState(initPlay);
+  const [game, setGame] = useState(initPlay);
   const [flashColor, setFlashColor] = useState("");
-  // USER CLICKS START
+  const [isGameOver, setIsGameOver] = useState(false);
+  // USER CLICKS START OR REPLAY
   function startHandle() {
     setIsOn(true);
+  }
+  function restartGame() {
+    setIsGameOver(false);
+    setGame(initPlay);
+    setIsOn(false);
   }
   // play.isOn changed. Change isDisplay.
   useEffect(() => {
     if (isOn) {
-      setPlay({ ...initPlay, isDisplay: true });
+      setGame({ ...initPlay, isDisplay: true });
     }
+    // eslint-disable-next-line
   }, [isOn]);
 
   // isDisplay is true. Add a color to display pattern.
   useEffect(() => {
-    if (isOn && play.isDisplay) {
-      let newColor = colorList[Math.floor(Math.random() * 4)];
-      const copyColors = [...play.displayPattern];
+    if (isOn && game.isDisplay) {
+      let newColor = colorList[Math.floor(Math.random() * 8)];
+      const copyColors = [...game.displayPattern];
       copyColors.push(newColor);
-      setPlay({ ...play, displayPattern: copyColors });
+      setGame({ ...game, displayPattern: copyColors });
     }
-  }, [isOn, play.isDisplay]);
+    // eslint-disable-next-line
+  }, [isOn, game.isDisplay]);
 
   // display all colors from pattern
   useEffect(() => {
-    if (isOn && play.isDisplay && play.displayPattern.length) {
+    if (isOn && game.isDisplay && game.displayPattern.length) {
       displayColors();
     }
-  }, [isOn, play.isDisplay, play.displayPattern.length]);
+    // eslint-disable-next-line
+  }, [isOn, game.isDisplay, game.displayPattern.length]);
 
   async function displayColors() {
-    await timeout(0.5);
-    for (let i = 0; i < play.displayPattern.length; i++) {
-      setFlashColor(play.displayPattern[i]);
-      await timeout(0.5);
+    await timeout(0.3);
+    for (let i = 0; i < game.displayPattern.length; i++) {
+      setFlashColor(game.displayPattern[i]);
+      playSound(game.displayPattern[i]);
+      await timeout(0.3);
       setFlashColor("");
       await timeout(0.5);
 
-      if (i === play.displayPattern.length - 1) {
-        const copyColors = [...play.displayPattern];
-        setPlay({
-          ...play,
+      if (i === game.displayPattern.length - 1) {
+        const copyColors = [...game.displayPattern];
+        setGame({
+          ...game,
           isDisplay: false,
           isUserPlay: true,
           userPattern: copyColors.reverse(),
@@ -61,35 +73,43 @@ function App() {
       }
     }
   }
-
+  // perform a check for the users pattern
+  //
   async function cardClickHandle(color) {
-    if (!play.isDisplay && play.isUserPlay) {
-      const copyUserPattern = [...play.userPattern];
+    if (!game.isDisplay && game.isUserPlay) {
+      const copyUserPattern = [...game.userPattern];
       const lastColor = copyUserPattern.pop();
       setFlashColor(color);
-
+      playSound(color);
       if (color === lastColor) {
         if (copyUserPattern.length) {
-          setPlay({ ...play, userPattern: copyUserPattern });
+          setGame({ ...game, userPattern: copyUserPattern });
         } else {
           await timeout(0.5);
-          setPlay({
-            ...play,
+          setGame({
+            ...game,
             isDisplay: true,
             isUserPlay: false,
-            score: play.displayPattern.length,
+            score: game.displayPattern.length,
             userPattern: [],
           });
         }
       } else {
         await timeout(0.5);
-        setPlay({ ...initPlay, score: play.displayPattern.length });
+        setGame({
+          ...initPlay,
+          score: game.displayPattern.length,
+        });
+        setIsGameOver(true);
       }
-      await timeout(0.5);
+      await timeout(0.1);
       setFlashColor("");
     }
   }
-
+  function playSound(color) {
+    let idx = colorList.indexOf(color);
+    allSounds[idx].play();
+  }
   return (
     <div className="app">
       <div className="card-wrapper">
@@ -104,16 +124,17 @@ function App() {
               color={v}
             />
           ))}
+        {!isOn && !game.score && (
+          <div className="btn" onClick={startHandle}>
+            Start
+          </div>
+        )}
+        {isOn && (game.isDisplay || game.isUserPlay) && (
+          <div className="btn">{game.score}</div>
+        )}
       </div>
 
-      {!isOn && !play.score && (
-        <button className="start-button" onClick={startHandle}>
-          Start
-        </button>
-      )}
-      {isOn && (play.isDisplay || play.isUserPlay) && (
-        <div className="score">{play.score}</div>
-      )}
+      {isGameOver && <GameOver score={game.score} reset={restartGame} />}
     </div>
   );
 }

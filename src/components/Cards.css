@@ -1,0 +1,70 @@
+.color-card {
+    width: 150px;
+    height: 150px;
+}
+
+.a {
+    background-color: #005F73;
+}
+
+.a.flash {
+    filter: brightness(1.2);
+}
+
+.b {
+    background-color: #0A9396
+}
+
+.b.flash {
+    filter: brightness(1.2);
+}
+
+.c {
+    background-color: #94D2BD;
+}
+
+.c.flash {
+    filter: brightness(1.2);
+}
+
+.d {
+
+    background-color: #662a6c;
+}
+
+.d.flash {
+    filter: brightness(1.2);
+}
+
+.e {
+    background-color: #FFC65C;
+}
+
+.e.flash {
+    filter: brightness(1.2);
+}
+
+.f {
+
+    background-color: #B0B356;
+}
+
+.f.flash {
+    filter: brightness(1.2);
+}
+
+.g {
+    background-color: #9B2226;
+}
+
+.g.flash {
+    filter: brightness(1.2);
+}
+
+.h {
+    background-color: #DE7002
+}
+
+.h.flash {
+    filter: brightness(1.2);
+}
