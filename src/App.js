@@ -171,7 +171,7 @@ function App() {
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <h3 className="popup-title">How to Play</h3>
         <p className="game-object">
-          Object of the game: <br />{" "}
+          Object of the game: <br/>
           <em>
             Repeat the ever-increasing color and sound pattern <br /> chosen by
             the whale.
