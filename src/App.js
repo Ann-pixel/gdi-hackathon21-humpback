@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
+// import Popup component
+import Popup from "./components/popup";
+// import arrow icons
+import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md'
 function App() {
   const colorList = ["red", "blue", "yellow", "green"];
   const initPlay = {
@@ -14,10 +18,18 @@ function App() {
   const [isOn, setIsOn] = useState(false);
   const [play, setPlay] = useState(initPlay);
   const [flashColor, setFlashColor] = useState("");
+  // popup instruction state
+  const [buttonPopup, setButtonPopup] = useState(false);
+  // hover state
+  const [hover, setHover] = useState(false)
   // USER CLICKS START
   function startHandle() {
     setIsOn(true);
   }
+  // Toggle hover function for How to Play button
+  const onHover = () => {
+    setHover(!hover)
+}
   // play.isOn changed. Change isDisplay.
   useEffect(() => {
     if (isOn) {
@@ -92,6 +104,17 @@ function App() {
 
   return (
     <div className="app">
+      {/* How to Play button */}
+      <div className="btn-wrapper">
+        <button 
+          className="popup-btn" 
+          onClick={() => setButtonPopup(true)}
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+        >
+          How to Play {hover ? <MdArrowForward /> : <MdKeyboardArrowRight />}
+        </button>
+      </div>      
       <div className="card-wrapper">
         {colorList &&
           colorList.map((v, i) => (
@@ -114,6 +137,21 @@ function App() {
       {isOn && (play.isDisplay || play.isUserPlay) && (
         <div className="score">{play.score}</div>
       )}
+      {/* Popup component triggers when How to Play button is clicked */}
+      <Popup 
+        trigger={buttonPopup} 
+        setTrigger={setButtonPopup}
+      >
+          <h3 className="popup-title">How to Play</h3>
+          <p className="game-object">Object of the game: <br/> <em>Repeat the ever-increasing color and sound pattern <br/> chosen by the whale.</em></p>
+          <ol className="game-instructions">
+              <li>Press any key to start</li>
+              <li>The whale will light up the first color button and play a sound. Repeat the pattern by pressing the same color button.</li>
+              <li>The whale will duplicate the first color and add one. Repeat these two colors by pressing the corresponding color buttons.</li>
+              <li>Keep playing for as long as you can repeat the sequence correctly.</li>
+              <li>If you fail to repeat the sequence correctly the whale will moan and the game ends.</li>
+          </ol>
+      </Popup>
     </div>
   );
 }
