@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe, faLinkedin } from "@fortawesome/free-solid-svg-icons"
 import logo from '../images/whale-32.png'
 import { Container, Row, Col } from 'react-bootstrap'
 
@@ -17,6 +19,17 @@ const Footer = () => {
     const footerNames={
         paddingTop: '10px',
         fontSize: '12px',
+    }
+
+    const lineItems={
+        listStyle: 'none',
+        padding: '0',
+        margin: '0 auto',
+        textAlign: 'left',
+    }
+
+    const icons={
+        color: '#FFC65C',
     }
 
     const creators = [
@@ -50,7 +63,14 @@ const Footer = () => {
                     <Col xs={12}>Meet the creaters:</Col>
                 </Row>
                 <Row style={footerNames}>
-                    <Col xs={3}>Gauri Mhaiskar</Col>
+                    <Col xs={3}>
+                        Gauri Mhaiskar
+                        <ul>
+                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.gaurimhaiskar.com/"><FontAwesomeIcon icon={faGlobe} style={icons} /></a></li>
+                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gauri-mhaiskar-08688160/"><FontAwesomeIcon icon={faLinkedin} style={icons} /></a></li>
+                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.gaurimhaiskar.com/"><FontAwesomeIcon icon={faGlobe} style={icons} /></a></li>
+                        </ul>
+                        </Col>
                     <Col xs={3}>Alison Lee</Col>
                     <Col xs={3}>Tracy Tucker</Col>
                     <Col xs={3}>Heidi Hanschu</Col>
