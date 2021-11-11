@@ -158,12 +158,12 @@ function App() {
               />
             ))}
           {!isOn && !game.score && (
-            <div className="btn" onClick={startHandle}>
+            <div className="black-btn" onClick={startHandle}>
               Start
             </div>
           )}
           {isOn && (game.isDisplay || game.isUserPlay) && (
-            <div className="btn">{game.score}</div>
+            <div className="black-btn">{game.score}</div>
           )}
         </div>
       </div>
