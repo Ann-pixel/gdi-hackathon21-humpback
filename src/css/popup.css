@@ -2,10 +2,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: right;
     align-items: center;
+    font-family: 'Chewy', cursive;
 }
 
 .popup-inner {
