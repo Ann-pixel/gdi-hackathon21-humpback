@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Navigation from "./components/Navigation";
 import Cards from "./components/colorCard";
 import timeout from "./utils/utils";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HighScores from "./components/HighScores";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Popup component
 import Popup from "./components/popup";
 // import arrow icons
@@ -104,6 +109,8 @@ function App() {
 
   return (
     <div className="app">
+      <Navigation />
+      <Header />
       {/* How to Play button */}
       <div className="btn-wrapper">
         <button 
@@ -152,6 +159,8 @@ function App() {
               <li>If you fail to repeat the sequence correctly the whale will moan and the game ends.</li>
           </ol>
       </Popup>
+      <HighScores />
+      <Footer />
     </div>
   );
 }
