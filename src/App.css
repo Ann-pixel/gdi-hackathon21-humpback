@@ -1,76 +1,41 @@
-.app{
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Gudea&display=swap');
+
+/* font-family: 'Chewy', cursive; */
+/* font-family: 'Gudea', sans-serif; */
+.body {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-}
-.card-wrapper{
-  display: flex;
-
-  flex-wrap: wrap;
-  width: 400px;
-}
-.color-card{
-  width: 200px;
-  height: 200px;
- 
-}
-.red{
-  background-color: red;
-}
-.red.flash{
-  background-color: rgb(255, 125, 125);
-}
-.yellow{
-  background-color: rgb(255, 255, 0);
-}
-.yellow.flash{
-  background-color: rgb(255,255,125);
-}
-.green{
-  background-color: green;
-}
-.green.flash{
-  background-color: rgb(125,255,125);
+  align-items: center;
+  margin-top: 20px;
 }
 
-.blue{
-  background-color: blue;
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
-.blue.flash{
-  background-color: rgb(125,125,255);
-}
-.start-button {
-  position: absolute;
-  width: 100px;
-  padding: 20px 10px;
-}
-.score {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  border-radius: 50%;
-  line-height: 100px;
-  font-size: 50px;
-  color: white;
-}
-.lost {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-color: black;
-  border-radius: 50%;
-  line-height: 100px;
-  font-size: 50px;
+
+.btn {
+  width: 150px;
+  height: 150px;
+  color: whitesmoke;
+  background-color: #001219;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-transform: uppercase;
+  cursor: pointer;
+  grid-area: 3/3/4/4;
 }
 
-.popup-title{
+.btn:hover {
+  filter: opacity(.7)
+}
+
+.popup-title {
   text-align: center;
   padding: 5px;
 }
@@ -81,7 +46,7 @@
   padding: 15px;
 }
 
-.popup-btn{
+.popup-btn {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -135,4 +100,3 @@
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-
