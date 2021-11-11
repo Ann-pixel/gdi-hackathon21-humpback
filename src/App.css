@@ -16,7 +16,7 @@
   grid-gap: 10px;
 }
 
-.btn {
+.black-btn {
   width: 150px;
   height: 150px;
   color: whitesmoke;
@@ -31,7 +31,7 @@
   grid-area: 3/3/4/4;
 }
 
-.btn:hover {
+.black-btn:hover {
   filter: opacity(.7)
 }
 
