@@ -3,25 +3,24 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(13, 236, 69, 0.2);
-
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
 .popup-inner {
+    display: flex;
+    flex-direction: row;
     position: relative;
     padding: 32px;
     width: 100%;
-    max-width: 640px;
-    background-color: #fff;
+    background-color: rgba(0, 95, 115, 0.9);
     border-radius: 20px;
+    color: #fff;
 }
 
 .popup-inner .close-btn {
-    position: absolute;
+    position: fixed;
     top: 16px;
     right: 16px;
     border-radius: 50px;
