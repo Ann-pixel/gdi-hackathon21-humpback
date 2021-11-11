@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Navigation from "./components/Navigation";
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HighScores from "./components/HighScores";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import Popup component
+import Popup from "./components/popup";
+// import arrow icons
+import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import Cards from "./components/Cards";
 import { timeout } from "./utils/utils";
 import { allSounds } from "./utils/utils";
@@ -16,11 +26,20 @@ function App() {
   const [isOn, setIsOn] = useState(false);
   const [game, setGame] = useState(initPlay);
   const [flashColor, setFlashColor] = useState("");
-  const [isGameOver, setIsGameOver] = useState(false);
-  // USER CLICKS START OR REPLAY
+  // popup instruction state
+  const [buttonPopup, setButtonPopup] = useState(false);
+  // hover state
+  const [hover, setHover] = useState(false);
+  // USER CLICKS START
   function startHandle() {
     setIsOn(true);
   }
+  // Toggle hover function for How to Play button
+  const onHover = () => {
+    setHover(!hover);
+  };
+  const [isGameOver, setIsGameOver] = useState(false);
+
   function restartGame() {
     setIsGameOver(false);
     setGame(initPlay);
@@ -111,29 +130,74 @@ function App() {
     allSounds[idx].play();
   }
   return (
-    <div className="app">
-      <div className="card-wrapper">
-        {colorList &&
-          colorList.map((v, i) => (
-            <Cards
-              key={v}
-              onClick={() => {
-                cardClickHandle(v);
-              }}
-              flash={flashColor === v}
-              color={v}
-            />
-          ))}
-        {!isOn && !game.score && (
-          <div className="btn" onClick={startHandle}>
-            Start
-          </div>
-        )}
-        {isOn && (game.isDisplay || game.isUserPlay) && (
-          <div className="btn">{game.score}</div>
-        )}
+    <div>
+      <Navigation />
+      <Header />
+      {/* How to Play button */}
+      <div className="btn-wrapper">
+        <button
+          className="popup-btn"
+          onClick={() => setButtonPopup(true)}
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+        >
+          How to Play {hover ? <MdArrowForward /> : <MdKeyboardArrowRight />}
+        </button>
       </div>
-
+      <div className="body">
+        <div className="card-wrapper">
+          {colorList &&
+            colorList.map((v, i) => (
+              <Cards
+                key={v}
+                onClick={() => {
+                  cardClickHandle(v);
+                }}
+                flash={flashColor === v}
+                color={v}
+              />
+            ))}
+          {!isOn && !game.score && (
+            <div className="btn" onClick={startHandle}>
+              Start
+            </div>
+          )}
+          {isOn && (game.isDisplay || game.isUserPlay) && (
+            <div className="btn">{game.score}</div>
+          )}
+        </div>
+      </div>
+      {/* Popup component triggers when How to Play button is clicked */}
+      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <h3 className="popup-title">How to Play</h3>
+        <p className="game-object">
+          Object of the game: <br />{" "}
+          <em>
+            Repeat the ever-increasing color and sound pattern <br /> chosen by
+            the whale.
+          </em>
+        </p>
+        <ol className="game-instructions">
+          <li>Press any key to start</li>
+          <li>
+            The whale will light up the first color button and play a sound.
+            Repeat the pattern by pressing the same color button.
+          </li>
+          <li>
+            The whale will duplicate the first color and add one. Repeat these
+            two colors by pressing the corresponding color buttons.
+          </li>
+          <li>
+            Keep playing for as long as you can repeat the sequence correctly.
+          </li>
+          <li>
+            If you fail to repeat the sequence correctly the whale will moan and
+            the game ends.
+          </li>
+        </ol>
+      </Popup>
+      <HighScores />
+      <Footer />
       {isGameOver && <GameOver score={game.score} reset={restartGame} />}
     </div>
   );

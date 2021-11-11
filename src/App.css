@@ -1,16 +1,19 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Gudea&display=swap');
+
+/* font-family: 'Chewy', cursive; */
+/* font-family: 'Gudea', sans-serif; */
+.body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(223, 216, 216);
+  margin-top: 20px;
 }
 
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-
-
 }
 
 .btn {
@@ -22,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-transform: uppercase;
   cursor: pointer;
   grid-area: 3/3/4/4;
@@ -29,4 +33,70 @@ body {
 
 .btn:hover {
   filter: opacity(.7)
+}
+
+.popup-title {
+  text-align: center;
+  padding: 5px;
+}
+
+.game-object {
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.popup-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 50px;
+  background: #010606;
+  white-space: nowrap;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-instructions {
+  list-style: none;
+  counter-reset: instructions-counter;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.game-instructions li {
+  counter-increment: instructions-counter;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+  text-align: left;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+.game-instructions li::before {
+  content: counter(instructions-counter);
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Abril Fatface', serif;
+  background: rgba(255, 198, 92, 0.9);
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+  border-radius: 50%;
+  width: 50px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
