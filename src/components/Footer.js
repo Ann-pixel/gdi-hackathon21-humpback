@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faLinkedin } from "@fortawesome/free-solid-svg-icons"
+import { faGlobe } from "@fortawesome/free-solid-svg-icons"
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 import logo from '../images/whale-32.png'
 import { Container, Row, Col } from 'react-bootstrap'
 
@@ -25,7 +26,7 @@ const Footer = () => {
         listStyle: 'none',
         padding: '0',
         margin: '0 auto',
-        textAlign: 'left',
+        textAlign: 'center',
     }
 
     const icons={
@@ -66,14 +67,31 @@ const Footer = () => {
                     <Col xs={3}>
                         Gauri Mhaiskar
                         <ul>
-                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.gaurimhaiskar.com/"><FontAwesomeIcon icon={faGlobe} style={icons} /></a></li>
-                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gauri-mhaiskar-08688160/"><FontAwesomeIcon icon={faLinkedin} style={icons} /></a></li>
-                        <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.gaurimhaiskar.com/"><FontAwesomeIcon icon={faGlobe} style={icons} /></a></li>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.gaurimhaiskar.com/"><FontAwesomeIcon icon={faGlobe} style={icons} /></a></li>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gauri-mhaiskar-08688160/"><FontAwesomeIcon icon={faLinkedin} style={icons} /></a></li>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://github.com/Ann-pixel"><FontAwesomeIcon icon={faGithub} style={icons} /></a></li>
                         </ul>
                         </Col>
-                    <Col xs={3}>Alison Lee</Col>
-                    <Col xs={3}>Tracy Tucker</Col>
-                    <Col xs={3}>Heidi Hanschu</Col>
+                    <Col xs={3}>
+                        Alison Lee
+                        <ul>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="http://www.linkedin.com/in/alison-lee-4547b114"><FontAwesomeIcon icon={faLinkedin} style={icons} /></a></li>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://github.com/alison2686"><FontAwesomeIcon icon={faGithub} style={icons} /></a></li>
+                        </ul>
+                    </Col>
+                    <Col xs={3}>
+                        Tracy Tucker
+                        <ul>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tracyreuther/"><FontAwesomeIcon icon={faLinkedin} style={icons} /></a></li>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://github.com/tracy-tucker"><FontAwesomeIcon icon={faGithub} style={icons} /></a></li>
+                        </ul>
+                    </Col>
+                    <Col xs={3}>
+                        Heidi Hanschu
+                        <ul>
+                            <li style={lineItems}><a target="_blank" rel="noreferrer" href="https://github.com/hhanschu"><FontAwesomeIcon icon={faGithub} style={icons} /></a></li>
+                        </ul>
+                    </Col>
                 </Row>
             </Container>
         </Container>
