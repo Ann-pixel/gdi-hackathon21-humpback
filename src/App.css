@@ -2,6 +2,8 @@
 
 /* font-family: 'Chewy', cursive; */
 /* font-family: 'Gudea', sans-serif; */
+
+
 .body {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  margin-bottom: 25px;
+  padding: 10px;
+  border: 2px solid #001219;
 }
 
 .black-btn {
@@ -29,6 +34,7 @@
   text-transform: uppercase;
   cursor: pointer;
   grid-area: 3/3/4/4;
+  font-family: 'Chewy', cursive;
 }
 
 .black-btn:hover {

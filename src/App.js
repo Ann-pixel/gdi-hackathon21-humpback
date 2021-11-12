@@ -11,11 +11,11 @@ import Popup from "./components/popup";
 // import arrow icons
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import Cards from "./components/Cards";
-import { timeout } from "./utils/utils";
-import { allSounds } from "./utils/utils";
+import { timeout, allSounds, whaleSound } from "./utils/utils";
 import GameOver from "./components/GameOver";
+
 function App() {
-  const colorList = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+  const colorList = ["a", "b", "c", "d", "e", "f", "g", "h"];
   const initPlay = {
     isDisplay: false,
     displayPattern: [],
@@ -119,6 +119,7 @@ function App() {
           ...initPlay,
           score: game.displayPattern.length,
         });
+        whaleSound.play();
         setIsGameOver(true);
       }
       await timeout(0.1);
