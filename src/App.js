@@ -172,14 +172,14 @@ function App() {
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <h3 className="popup-title">How to Play</h3>
         <p className="game-object">
-          Object of the game: <br/>
+          Object of the game: <br />
           <em>
             Repeat the ever-increasing color and sound pattern <br /> chosen by
             the whale.
           </em>
         </p>
         <ol className="game-instructions">
-          <li>Press any key to start</li>
+          <li>Press START</li>
           <li>
             The whale will light up the first color button and play a sound.
             Repeat the pattern by pressing the same color button.
