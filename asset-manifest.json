@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/gdi-hackathon21-humpback/static/css/main.65c888ee.chunk.css",
+    "main.js": "/gdi-hackathon21-humpback/static/js/main.98b038e8.chunk.js",
+    "main.js.map": "/gdi-hackathon21-humpback/static/js/main.98b038e8.chunk.js.map",
+    "runtime-main.js": "/gdi-hackathon21-humpback/static/js/runtime-main.c9a44765.js",
+    "runtime-main.js.map": "/gdi-hackathon21-humpback/static/js/runtime-main.c9a44765.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/gdi-hackathon21-humpback/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.cb6446f4.chunk.js": "/gdi-hackathon21-humpback/static/js/2.cb6446f4.chunk.js",
+    "static/js/2.cb6446f4.chunk.js.map": "/gdi-hackathon21-humpback/static/js/2.cb6446f4.chunk.js.map",
+    "static/js/3.fd069270.chunk.js": "/gdi-hackathon21-humpback/static/js/3.fd069270.chunk.js",
+    "static/js/3.fd069270.chunk.js.map": "/gdi-hackathon21-humpback/static/js/3.fd069270.chunk.js.map",
+    "index.html": "/gdi-hackathon21-humpback/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/gdi-hackathon21-humpback/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.65c888ee.chunk.css.map": "/gdi-hackathon21-humpback/static/css/main.65c888ee.chunk.css.map",
+    "static/js/2.cb6446f4.chunk.js.LICENSE.txt": "/gdi-hackathon21-humpback/static/js/2.cb6446f4.chunk.js.LICENSE.txt",
+    "static/media/InstructorWhale-Small.11d16d30.png": "/gdi-hackathon21-humpback/static/media/InstructorWhale-Small.11d16d30.png",
+    "static/media/a.2d701cb1.mp3": "/gdi-hackathon21-humpback/static/media/a.2d701cb1.mp3",
+    "static/media/b.d90b5485.mp3": "/gdi-hackathon21-humpback/static/media/b.d90b5485.mp3",
+    "static/media/c.2f4c02be.mp3": "/gdi-hackathon21-humpback/static/media/c.2f4c02be.mp3",
+    "static/media/d.58bfaa28.mp3": "/gdi-hackathon21-humpback/static/media/d.58bfaa28.mp3",
+    "static/media/e.cd503cd3.mp3": "/gdi-hackathon21-humpback/static/media/e.cd503cd3.mp3",
+    "static/media/f.8aee37b9.mp3": "/gdi-hackathon21-humpback/static/media/f.8aee37b9.mp3",
+    "static/media/g.3979f430.mp3": "/gdi-hackathon21-humpback/static/media/g.3979f430.mp3",
+    "static/media/h.ac16f5e2.mp3": "/gdi-hackathon21-humpback/static/media/h.ac16f5e2.mp3",
+    "static/media/whale.4ae1905f.mp3": "/gdi-hackathon21-humpback/static/media/whale.4ae1905f.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9a44765.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.cb6446f4.chunk.js",
+    "static/css/main.65c888ee.chunk.css",
+    "static/js/main.98b038e8.chunk.js"
+  ]
+}
